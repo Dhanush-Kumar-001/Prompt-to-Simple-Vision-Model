@@ -1,0 +1,11 @@
+ultralytics>=8.0.0
+torch
+torchvision
+opencv-python
+numpy
+pillow
+jinja2
+jsonschema
+fastapi
+uvicorn
+python-dotenv
