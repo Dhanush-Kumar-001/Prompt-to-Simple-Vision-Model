@@ -31,7 +31,35 @@ Runnable AI Vision Project (ZIP)
 ```
 
 ---
+## ℹ️ Important Information
 
+This project uses **YOLOv8 pre-trained models** provided by Ultralytics.  
+No model training or fine-tuning is performed.
+
+Based on the user’s prompt, the system:
+- Selects the appropriate YOLO model and task
+- Generates a complete runnable pipeline using templates
+- Packages the generated pipeline into a **ZIP file**
+
+### 📦 Generated ZIP File
+
+The downloaded ZIP file contains:
+- `run.py` – executable inference script  
+- `requirements.txt` – all required dependencies  
+- `README.md` – instructions to run the pipeline  
+
+You can extract the ZIP file and run the pipeline independently on any machine.
+
+### ▶️ Running the Generated Pipeline
+
+All instructions are already included inside the generated ZIP.  
+In general, the steps are:
+
+```bash
+pip install -r requirements.txt
+python run.py image.jpg
+```
+---
 ## 🧩 Architecture Overview
 
 ### 1️⃣ Base Template
@@ -96,6 +124,10 @@ backend/
     └── routes.py
     └── errors.py
     └── schemas.py
+
+backend/
+├── app.py
+
 ```
 ---
 
@@ -153,4 +185,5 @@ uvicorn api.main:app --reload
 cd frontend
 python app.py
 ```
+click the ip address generated to run the model locally in your browser
 ---
