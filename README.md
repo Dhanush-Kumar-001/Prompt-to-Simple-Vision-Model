@@ -145,7 +145,7 @@ Follow the steps below to run the Vision Pipeline Compiler locally.
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/vision-pipeline-compiler.git
+git clone https://github.com/Dhanush-Kumar-001/Prompt-to-Simple-Vision-Model.git
 cd Prompt-to-Simple-Vision-Model
 ```
 ### 2️⃣ Create and Activate a Virtual Environment
