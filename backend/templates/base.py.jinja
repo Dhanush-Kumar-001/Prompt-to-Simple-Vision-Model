@@ -1,0 +1,29 @@
+from ultralytics import YOLO
+import sys
+import cv2
+from pathlib import Path
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python run.py <image_path>")
+        return
+
+    image_path = sys.argv[1]
+
+    if not Path(image_path).exists():
+        raise FileNotFoundError(f"Image not found: {image_path}")
+
+    model = YOLO("{{ model_weights }}")
+
+    results = model(
+        image_path,
+        classes={{ class_ids }},
+        conf={{ inference.get("conf", 0.25) }}
+    )
+
+{{ task_blocks | indent(4, true) }}
+
+{{ output_blocks | indent(4, true) }}
+
+if __name__ == "__main__":
+    main()

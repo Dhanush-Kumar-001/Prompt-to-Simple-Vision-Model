@@ -1,0 +1,8 @@
+# --- Output: count per class ---
+from collections import Counter
+
+class_ids = detections.cls.tolist()
+counts = Counter(class_ids)
+
+for cls_id, cnt in counts.items():
+    print(f"Class {int(cls_id)}: {cnt}")

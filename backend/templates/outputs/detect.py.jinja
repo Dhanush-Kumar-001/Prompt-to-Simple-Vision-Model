@@ -1,0 +1,5 @@
+# --- Output: bounding boxes ---
+annotated = detections.plot()
+output_path = "output.jpg"
+cv2.imwrite(output_path, annotated)
+print(f"Saved detection output to {output_path}")

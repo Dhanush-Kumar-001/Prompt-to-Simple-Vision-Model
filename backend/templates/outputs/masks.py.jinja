@@ -1,0 +1,5 @@
+# --- Output: segmentation masks ---
+annotated = detections.plot()
+output_path = "segmentation_output.jpg"
+cv2.imwrite(output_path, annotated)
+print(f"Saved segmentation output to {output_path}")

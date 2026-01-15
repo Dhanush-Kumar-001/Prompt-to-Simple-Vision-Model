@@ -1,0 +1,5 @@
+# --- Output: pose skeleton ---
+annotated = detections.plot()
+output_path = "pose_output.jpg"
+cv2.imwrite(output_path, annotated)
+print(f"Saved pose output to {output_path}")
