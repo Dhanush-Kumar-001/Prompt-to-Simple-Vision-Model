@@ -61,51 +61,93 @@ These **consume prepared variables** and produce outputs.
 
 backend/
 ├── llm/
-│ ├── prompt_to_json.py
-│ ├── validator.py
+│   ├── prompt_to_json.py
+│   ├── validator.py
 │
 ├── compiler/
-│ ├── pipeline_builder.py
-│ ├── code_generator.py
-│ ├── task_router.py
-│ ├── output_resolver.py
-│ ├── model_resolver.py
+│   ├── pipeline_builder.py
+│   ├── code_generator.py
+│   ├── task_router.py
+│   ├── output_resolver.py
+│   ├── model_resolver.py
 │
 ├── templates/
-│ ├── base.py.jinja
-│ ├── tasks/
-│ │ ├── detect.py.jinja
-│ │ ├── segment.py.jinja
-│ │ ├── classify.py.jinja
-│ │ └── pose.py.jinja
-│ ├── outputs/
-│ │ ├── detect.py.jinja
-│ │ ├── count.py.jinja
-│ │ ├── masks.py.jinja
-│ │ └── classify.py.jinja
+│   ├── base.py.jinja
+│   ├── tasks/
+│   │   ├── detect.py.jinja
+│   │   ├── segment.py.jinja
+│   │   ├── classify.py.jinja
+│   │   └── pose.py.jinja
+│   ├── outputs/
+│       ├── detect.py.jinja
+│       ├── count.py.jinja
+│       ├── masks.py.jinja
+│       └── classify.py.jinja
 │
 ├── runtime/
-│ ├── requirements.txt
-│ └── README.md
+│   ├── requirements.txt
+│   └── README.md
 │
 └── api/
-└── main.py
-
+    └── main.py
+    └── routes.py
+    └── errors.py
+    └── schemas.py
 
 ---
 
-## 🧪 Example Usage
+## 🚀 Get Started
 
-```python
-from llm.prompt_to_json import generate_pipeline_json
-from compiler.pipeline_builder import build_execution_plan, build_pipeline_project
+Follow the steps below to run the Vision Pipeline Compiler locally.
 
-json_cfg = generate_pipeline_json(
-    "Segment people in an image and save masks"
-)
+---
 
-plan = build_execution_plan(json_cfg)
-project_path = build_pipeline_project(plan)
+### 1️⃣ Clone the Repository
 
-print("Pipeline generated at:", project_path)
+```bash
+git clone https://github.com/your-username/vision-pipeline-compiler.git
+cd Prompt-to-Simple-Vision-Model
+```
+### 2️⃣ Create and Activate a Virtual Environment
 
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r runtime/requirements.txt
+```
+
+### 4️⃣ Move to backend folder
+
+```bash
+cd backend
+```
+
+### 5️⃣ Configure Environment Variables
+Create a .env file inside the backend/ directory:
+```bash
+GROQ_API_KEY=your_api_key_here
+```
+
+## ▶️ Running Backend and Frontend Together
+
+The backend and frontend run as **two separate services**.  
+Open **two terminals** and start each one as shown below.
+
+---
+
+### 🖥️ Terminal 1 — Backend (API)
+
+```bash
+uvicorn api.main:app --reload
+```
+
+### 🖥️ Terminal 2 — Frontend
+
+```bash
+cd frontend
+python app.py
+```
