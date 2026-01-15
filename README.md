@@ -15,6 +15,7 @@ into a **ready-to-run Python project** using **YOLOv8 pre-trained models**.
 
 ## 🧠 How It Works (High Level)
 
+```bash
 User Prompt
 ↓
 LLM → Structured JSON
@@ -27,6 +28,7 @@ Template-Based Code Generation
 ↓
 Runnable AI Vision Project (ZIP)
 
+```
 
 ---
 
@@ -59,6 +61,7 @@ These **consume prepared variables** and produce outputs.
 
 ## 📁 Project Structure
 
+```bash
 backend/
 ├── llm/
 │   ├── prompt_to_json.py
@@ -93,7 +96,7 @@ backend/
     └── routes.py
     └── errors.py
     └── schemas.py
-
+```
 ---
 
 ## 🚀 Get Started
@@ -127,7 +130,7 @@ cd backend
 ```
 
 ### 5️⃣ Configure Environment Variables
-Create a .env file inside the backend/ directory:
+Past your API key in .env file inside the backend/ directory:
 ```bash
 GROQ_API_KEY=your_api_key_here
 ```
@@ -137,7 +140,6 @@ GROQ_API_KEY=your_api_key_here
 The backend and frontend run as **two separate services**.  
 Open **two terminals** and start each one as shown below.
 
----
 
 ### 🖥️ Terminal 1 — Backend (API)
 
@@ -151,3 +153,4 @@ uvicorn api.main:app --reload
 cd frontend
 python app.py
 ```
+---
